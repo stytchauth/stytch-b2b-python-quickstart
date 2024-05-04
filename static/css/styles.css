@@ -1,0 +1,121 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.login-container {
+    width: 300px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+input[type=email], button {
+    width: 90%;
+    padding: 8px;
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #333; /* Dark gray background */
+    color: white; /* White text color */
+    border: none; /* No border */
+    padding: 12px 25px; /* Padding around text */
+    margin: 8px; /* Space between buttons */
+    border-radius: 25px; /* Smooth rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    font-size: 15px; /* Text size */
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s; /* Smooth transitions for background color, transform, and shadow */
+    font-weight: 500; /* Medium font weight */
+    letter-spacing: 0.5px; /* Spacing between letters for better readability */
+}
+
+button:hover, button:focus {
+    background-color: #555; /* Slightly lighter gray on hover/focus */
+    transform: translateY(-2px); /* Lift button slightly on hover/focus */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow for depth */
+}
+
+button:active {
+    background-color: #222; /* Even darker on click */
+    transform: translateY(1px); /* Push down slightly on click */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.25); /* Smaller shadow on click */
+}
+
+button-container {
+    display: flex;
+    flex-direction: column;  /* Stack buttons vertically */
+    align-items: center;
+    padding: 20px;
+}
+
+/* Card styles */
+.card {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    margin: 80px auto; /* Centering the card */
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Ensuring the card scrolls if content exceeds viewport height */
+.card-content {
+    overflow-y: auto;
+}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 30%; /* Could be more or less, depending on screen size */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Form styling */
+input[type="text"], button {
+    width: 95%;
+    padding: 10px;
+    margin: 10px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}

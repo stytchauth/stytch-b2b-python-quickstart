@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+{% block header %}
+    <h1>
+        Welcome to {{ organization.organization_name }}
+    </h1>
+    <h2>Organization Info</h2>
+    <p>Slug: {{ organization.organization_slug }}</p>
+    {% if organization.email_jit_provisioning == 'NOT_ALLOWED' %}
+        {% if member.is_admin %}
+            <button type="submit" onClick="enableJIT()">Enable JIT Provisioning by Email Domain</button>
+        {% else %}
+            <p> JIT Provisioning: NOT_ALLOWED </p>
+        {%endif %}
+    {% else %}
+        <p>JIT Provisioning Allowed for Domains: {{ organization.email_allowed_domains}} </p>
+    {% endif %}
+    <h2>Profile Info</h2>
+    <p>Email: {{ member.email_address }}</p>
+    <p>Admin Role: {{ member.is_admin }}</p>
+
+{% endblock %}
+
+{% block content %}
+    <button type="submit" onclick="logout()">Logout</button>
+    <button type="submit" onclick="switchOrgs()">Switch Organizations</button>
+    <script>
+        function logout() {
+            // Redirect to the Flask logout route
+            window.location.href = `/logout`;
+        }
+
+        function enableJIT() {
+            window.location.href = `/enable_jit`;
+        }
+
+        function switchOrgs() {
+            window.location.href = `/switch_orgs`;
+        }
+    </script>
+{% endblock %}

@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}Dashboard{% endblock %}
+{% block header %}
+    <h1>Discovered Organizations for {{ email_address }}</h1>
+{% endblock %}
+
+{% block content %}
+    {% if is_login %}
+        <p>If you have any existing memberships, pending invitations, or Organizations you can join through Just-In-Time (JIT) Provisioning they will be displayed here.<br/>Otherwise you can create a new Organization</p>
+    {% else %}
+        <p>Stytch allows users to switch between Organizations that they have active or pending Memberships, without needing to re-authenticate</p>
+    {% endif %}
+    <div class="button-container">
+        {% for organization in discovered_organizations %}
+            <button onclick="selectOrg('{{ organization.organization_id }}')">
+                {{ organization.organization_name }}
+            </button>
+        {% endfor %}
+        {% if discovered_organizations %}
+        <div class="divider">
+            <hr class="line" />
+        </div>
+        {% endif %}
+        {% if is_login %}
+        <button id="btnCreateOrg">
+            Create New Organization
+         </button>
+        {% endif %}
+    </div>
+
+    <div id="orgModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <form action="/create_organization" method="POST">
+                <h2>Create Organization</h2>
+                <label for="org_name">Organization Name:</label>
+                <input type="text" id="org_name" name="org_name" required><br>
+
+                <label for="org_slug">Organization Slug:</label>
+                <input type="text" id="org_slug" name="org_slug" required><br>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    <script>
+        function selectOrg(organization_id) {
+            window.location.href = `/exchange/${organization_id}`;
+        }
+
+        // Get the modal
+        var modal = document.getElementById("orgModal");
+
+        // Get the button that opens the modal
+        var btn = document.getElementById("btnCreateOrg");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+{% endblock %}
