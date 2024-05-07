@@ -28,7 +28,7 @@ pip install -r requirements.txt
 
 #### 4. Set ENV vars
 
-Copy `.env-TEMPLATE` to `.env` and update the values with your Stytch project ID, secret and public token from [the API Keys section of the Stytch Dashboard](https://stytch.com/dashboard/api-keys).
+Copy `.env.template` to `.env` and update the values with your Stytch project ID, secret and public token from [the API Keys section of the Stytch Dashboard](https://stytch.com/dashboard/api-keys).
 
 #### 7. Run the Server
 Run
