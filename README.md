@@ -1,6 +1,7 @@
 # Stytch B2B Quickstart with Python Flask
 Quickstart example app covering the basics for getting up and running with B2B authentication:
 * Email Magic Links
+* Google OAuth
 * Sessions
 * RBAC
 
@@ -9,8 +10,8 @@ Ensure you have pip, python and virtualenv installed
 
 #### 1. Clone the repository.
 ```
-git clone https://github.com/stytchauth/stytch-b2b-flask-magic-links.git
-cd stytch-b2b-flask-magic-links
+git clone https://github.com/stytchauth/stytch-b2b-python-quickstart.git
+cd stytch-b2b-python-quickstart
 ```
 
 #### 2. Setup a virtualenv
