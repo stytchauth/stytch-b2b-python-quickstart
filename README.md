@@ -11,7 +11,7 @@ Ensure you have pip, python and virtualenv installed
 #### 1. Clone the repository.
 ```
 git clone https://github.com/stytchauth/stytch-b2b-python-quickstart.git
-cd stytch-b2b-python-magic-quickstart
+cd stytch-b2b-python-quickstart
 ```
 
 #### 2. Setup a virtualenv
